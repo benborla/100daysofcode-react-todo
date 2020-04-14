@@ -1,13 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import App from './components/App';
 import * as serviceWorker from './serviceWorker';
+import { Provider } from 'react-redux'
+import { createStore } from 'redux'
+import { devToolsEnhancer } from 'redux-devtools-extension'
+import rootReducer from './store/rootReducer'
 
+const store = createStore(rootReducer, devToolsEnhancer())
+
+// https://codesandbox.io/s/github/reduxjs/redux/tree/master/examples/todos?file=/src/components/TodoList.js
 ReactDOM.render(
-  <React.StrictMode>
+  <Provider store={store}>
     <App />
-  </React.StrictMode>,
+  </Provider>,
   document.getElementById('root')
 );
 
