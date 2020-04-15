@@ -1,6 +1,7 @@
 import { 
   ADD_TODO,
   TOGGLE_TODO,
+  REMOVE_TODO
 } from './action'
 
 const todos = (state = [], action) => {
@@ -20,6 +21,8 @@ const todos = (state = [], action) => {
           ? {...todo, completed: !todo.completed}
           : todo
       )
+    case REMOVE_TODO:
+      return state.filter(todo => todo.id !== action.id)
     default:
       return state
   }

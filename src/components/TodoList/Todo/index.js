@@ -1,6 +1,7 @@
 import React from 'react'
+import RemoveButton from './RemoveButton'
 
-const Todo = ({ task, completed, handleTodoStatus}) => (
+const Todo = ({ id, task, completed, handleTodoStatus}) => (
   <li
     onDoubleClick={handleTodoStatus}
     style={{
@@ -9,7 +10,7 @@ const Todo = ({ task, completed, handleTodoStatus}) => (
     }}
   >
     { task }
-    <button type="button" style={{ border: 'none', color: 'red'}}>&times;</button>
+    <RemoveButton todoId={id}/>
   </li>
 )
 
