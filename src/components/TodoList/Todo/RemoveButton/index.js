@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 
 const RemoveButton = ({ todoId, removeTodo }) => (
   <button type="button" style={{ border: 'none', color: 'red'}} onClick={() => removeTodo(todoId)}>
-    &times; { todoId } test
+    &times;
   </button>
 )
 
