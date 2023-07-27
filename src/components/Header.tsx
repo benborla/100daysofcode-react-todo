@@ -6,7 +6,6 @@ type HeaderProps = {
 };
 
 export default function Header({ leftText, rightText }: HeaderProps) {
-  console.log(typeof rightText === 'string' || rightText !== '');
   return (
     <header className="flex justify-between mb-5">
       <h1 className="text-2xl">{leftText}</h1>

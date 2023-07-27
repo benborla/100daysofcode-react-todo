@@ -15,7 +15,7 @@ export default async function Home() {
     <>
       <Header leftText="To Do" rightText="New" />
       <ul className="pl-4">
-        {todos.map((todo: TodoItemProps): JSX.Element => (
+        {todos.map(todo => (
           <TodoItem key={todo.id} {...todo} toggleTodo={toggleTodo} />
         ))}
       </ul>
